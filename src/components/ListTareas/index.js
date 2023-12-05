@@ -1,14 +1,14 @@
 import { View, FlatList, Text, Button, StyleSheet } from "react-native"
-import CardProduct from "./CardProduct"
+import CardTarea from "./CardTarea"
 
-const ListProducts = ({ products, handlerDeleteModal }) => {
+const ListTareas = ({ tareas, handlerDeleteModal }) => {
   return (
     <View style={styles.listContainer}>
       <FlatList
-        data={products}
+        data={tareas}
         keyExtractor={elemento => elemento.id}
         renderItem={({ item }) =>
-          <CardProduct
+          <CardTarea
           handlerDeleteModal={handlerDeleteModal}
           item={item}
           />
@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
  
 })
 
-export default ListProducts
+export default ListTareas

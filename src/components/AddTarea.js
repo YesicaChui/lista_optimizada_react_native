@@ -1,14 +1,14 @@
 import { View,TextInput,Button,StyleSheet} from "react-native"
 
-const AddProduct = ({setNewTitleProduct,newTitleProduct,handlerAddProduct}) => {
+const AddTarea = ({setNewTitleTarea,newTitleTarea,handlerAddTarea}) => {
   return (
     <View style={styles.inputContainer}>
 
     <TextInput placeholder="Nombre" style={styles.input}
-      onChangeText={(texto) => setNewTitleProduct(texto)} value={newTitleProduct} />
+      onChangeText={(texto) => setNewTitleTarea(texto)} value={newTitleTarea} />
 
     
-    <Button title="ADD" onPress={handlerAddProduct} ></Button>
+    <Button title="Agregar" onPress={handlerAddTarea} ></Button>
 
   </View>
 
@@ -29,4 +29,4 @@ const AddProduct = ({setNewTitleProduct,newTitleProduct,handlerAddProduct}) => {
   },
 
  })
-export default AddProduct
+export default AddTarea

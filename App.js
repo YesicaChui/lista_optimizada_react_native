@@ -1,55 +1,59 @@
 import { useState } from "react"
-import { StyleSheet, Text, View,  Button,  FlatList } from "react-native"
+import { StyleSheet, Text, View, Button, FlatList } from "react-native"
 import uuid from 'react-native-uuid';
 import ModalDelete from "./src/components/ModalDelete";
-import AddProduct from "./src/components/AddProduct";
-import ListProducts from "./src/components/ListProducts";
+
+import ListTareas from "./src/components/ListTareas";
+import AddTarea from "./src/components/AddTarea.js";
 //import { styles } from "./styleApp"
 const App = () => {
 
-  const [newTitleProduct, setNewTitleProduct] = useState("")
-  
-  const [products, setProducts] = useState([])
-  const [productSelected, setProductSelected] = useState({})
+  const [newTitleTarea, setNewTitleTarea] = useState("")
+
+  const [tareas, setTareas] = useState([])
+  const [tareaSelected, setTareaSelected] = useState({})
   const [isVisible, setIsVisible] = useState(false)
 
-  const handlerDeleteModal = (item)=>{
+  const handlerDeleteModal = (item) => {
     console.log(item)
     setIsVisible(true)
-    setProductSelected(item)
+    setTareaSelected(item)
   }
 
-  const handlerDeleteProduct = ()=>{
+  const handlerDeleteTarea = () => {
     console.log("vamos a borrar")
-    setProducts(products.filter(elemento => elemento.id != productSelected.id))
+    setTareas(tareas.filter(elemento => elemento.id != tareaSelected.id))
     setIsVisible(false)
   }
-  const handlerAddProduct = () => {
-    const newProduct = {
+  const handlerCompletarTarea = (elementoSeleccionado)=>{
+
+  }
+  const handlerAddTarea = () => {
+    const newTarea = {
       id: uuid.v4(),
-      title: newTitleProduct,
-     
+      title: newTitleTarea,
+      completado: false,
     }
-    setProducts(c => [...c, newProduct])
-    setNewTitleProduct("")
-    
+    setTareas(c => [...c, newTarea])
+    setNewTitleTarea("")
+
   }
   return (
     <View style={styles.container}>
-     <Text style={styles.titulo}>Lista de Tareas</Text>
-      <AddProduct 
-      setNewTitleProduct = {setNewTitleProduct}
-      newTitleProduct = {newTitleProduct}
-      handlerAddProduct = {handlerAddProduct}
+      <Text style={styles.titulo}>Lista de Tareas</Text>
+      <AddTarea
+        setNewTitleTarea={setNewTitleTarea}
+        newTitleTarea={newTitleTarea}
+        handlerAddTarea={handlerAddTarea}
       />
-      
-      <ModalDelete 
-        producto = {productSelected} 
-        isVisible = {isVisible}  
-        handlerDeleteProduct = {handlerDeleteProduct} 
-        setIsVisible = {setIsVisible}
+
+      <ModalDelete
+        tarea={tareaSelected}
+        isVisible={isVisible}
+        handlerDeleteTarea={handlerDeleteTarea}
+        setIsVisible={setIsVisible}
       />
-<ListProducts handlerDeleteModal={handlerDeleteModal} products={products}/>
+      <ListTareas handlerDeleteModal={handlerDeleteModal} tareas={tareas} />
     </View>
   )
 }
@@ -61,19 +65,19 @@ const styles = StyleSheet.create(
       alignItems: "center",
       marginTop: 80,
     },
-    
-    
+
+
     image: {
       alignSelf: "center",
       width: 200,
       height: 200,
       borderRadius: 10, // Ejemplo de aplicar un borde redondeado
     },
-    titulo:{
-      color:"green",
-      fontSize:30,
-      fontWeight:"700",
-      marginBottom:15
+    titulo: {
+      color: "green",
+      fontSize: 30,
+      fontWeight: "700",
+      marginBottom: 15
     }
   }
 )

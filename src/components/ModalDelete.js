@@ -1,6 +1,6 @@
 import { View, Modal, Text, Button, StyleSheet } from 'react-native'
 
-const ModalDelete = ({ isVisible, handlerDeleteProduct, setIsVisible, producto }) => {
+const ModalDelete = ({ isVisible, handlerDeleteTarea, setIsVisible, tarea }) => {
  
   return (
 
@@ -12,8 +12,8 @@ const ModalDelete = ({ isVisible, handlerDeleteProduct, setIsVisible, producto }
       <View style={styles.modalContainer}>
         <View style={styles.modalContent}>
           <Text style={styles.modalText}>¿Desea Eliminar la Tarea?</Text>
-          <Text style={styles.modalText}>{producto.title}</Text>
-          <Button title="si" onPress={() => handlerDeleteProduct()} />
+          <Text style={styles.modalText}>{tarea.title}</Text>
+          <Button title="si" onPress={() => handlerDeleteTarea()} />
           <Button title="No" onPress={() => setIsVisible(false)} />
         </View>
       </View>
