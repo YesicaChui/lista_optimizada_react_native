@@ -21,22 +21,31 @@ const AddTarea = ({setNewTitleTarea,newTitleTarea,handlerAddTarea}) => {
     flexDirection: "row",
     alignItems: "center",
     alignSelf: "stretch",
-    justifyContent: "space-around"
+    justifyContent: "space-around",
+    marginHorizontal:7,
+    gap:10
   },
   input: {
-    borderWidth: 4,
+    flex:7,
+    borderWidth: 3,
     paddingHorizontal: 10,
     paddingVertical: 5,
-    width: 150
+    width: 150,
+    borderRadius:5,
+    borderColor: "green"
   },
   botonInsertar:{
+    flex:3,
     backgroundColor:"green",
     padding:15,
     borderRadius:20
   },
   textBotonInsertar:{
     color:"white",
-    fontWeight:"700"
+    fontWeight:"700",
+    textAlign:"center",
+    fontSize: 15
+    
   }
 
  })

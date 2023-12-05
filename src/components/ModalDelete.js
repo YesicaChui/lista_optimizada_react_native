@@ -31,14 +31,17 @@ const styles = StyleSheet.create(
     },
     modalContent:{
       width: "80%",
-      borderWidth: 2,
+      borderRadius:10,
       padding: 10,
       gap: 10,
-      backgroundColor:"red",
+      backgroundColor:"#00d26a",
       
     },
     modalText:{
       textAlign: "center",
+      color: "#fff",
+      fontWeight:"700",
+      fontSize: 20
     },
 
   }

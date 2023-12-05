@@ -20,7 +20,8 @@ const ListTareas = ({ tareas, handlerDeleteModal,handlerCompletarTarea }) => {
 }
 const styles = StyleSheet.create({
   listContainer: {
-    width: "100%"
+    width: "100%",
+    marginBottom:100
   },
  
 })
