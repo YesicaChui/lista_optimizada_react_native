@@ -4,7 +4,7 @@ const AddTarea = ({setNewTitleTarea,newTitleTarea,handlerAddTarea}) => {
   return (
     <View style={styles.inputContainer}>
 
-    <TextInput placeholder="Nombre" style={styles.input}
+    <TextInput placeholder="Ingrese una Tarea" style={styles.input}
       onChangeText={(texto) => setNewTitleTarea(texto)} value={newTitleTarea} />
 
     
@@ -32,7 +32,8 @@ const AddTarea = ({setNewTitleTarea,newTitleTarea,handlerAddTarea}) => {
     paddingVertical: 5,
     width: 150,
     borderRadius:5,
-    borderColor: "green"
+    borderColor: "green",
+    fontSize:16
   },
   botonInsertar:{
     flex:3,
