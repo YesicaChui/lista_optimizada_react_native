@@ -1,15 +1,13 @@
 import { View,TextInput,Button,StyleSheet} from "react-native"
 
-const AddProduct = ({setNewTitleProduct,newTitleProduct,setNewPriceProduct,newPriceProduct,handlerAddProduct}) => {
+const AddProduct = ({setNewTitleProduct,newTitleProduct,handlerAddProduct}) => {
   return (
     <View style={styles.inputContainer}>
 
     <TextInput placeholder="Nombre" style={styles.input}
       onChangeText={(texto) => setNewTitleProduct(texto)} value={newTitleProduct} />
 
-    <TextInput placeholder="Precio" style={styles.input}
-      onChangeText={(texto) => setNewPriceProduct(texto)} value={newPriceProduct} />
-
+    
     <Button title="ADD" onPress={handlerAddProduct} ></Button>
 
   </View>

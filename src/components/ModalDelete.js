@@ -11,7 +11,7 @@ const ModalDelete = ({ isVisible, handlerDeleteProduct, setIsVisible, producto }
     >
       <View style={styles.modalContainer}>
         <View style={styles.modalContent}>
-          <Text style={styles.modalText}>Desea Borrar el Producto?</Text>
+          <Text style={styles.modalText}>¿Desea Eliminar la Tarea?</Text>
           <Text style={styles.modalText}>{producto.title}</Text>
           <Button title="si" onPress={() => handlerDeleteProduct()} />
           <Button title="No" onPress={() => setIsVisible(false)} />

@@ -4,7 +4,7 @@ const CardProduct = ({item,handlerDeleteModal}) => {
   return (
     <View style={styles.cardProduct}>
             <Text style={styles.cardTitle}>{item.title}</Text>
-            <Text>S/.{item.price}</Text>
+           
             <Button title="DEL" onPress={() => handlerDeleteModal(item)} />
           </View>
   )

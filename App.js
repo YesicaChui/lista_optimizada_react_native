@@ -8,7 +8,7 @@ import ListProducts from "./src/components/ListProducts";
 const App = () => {
 
   const [newTitleProduct, setNewTitleProduct] = useState("")
-  const [newPriceProduct, setNewPriceProduct] = useState("")
+  
   const [products, setProducts] = useState([])
   const [productSelected, setProductSelected] = useState({})
   const [isVisible, setIsVisible] = useState(false)
@@ -28,19 +28,18 @@ const App = () => {
     const newProduct = {
       id: uuid.v4(),
       title: newTitleProduct,
-      price: newPriceProduct
+     
     }
     setProducts(c => [...c, newProduct])
     setNewTitleProduct("")
-    setNewPriceProduct("")
+    
   }
   return (
     <View style={styles.container}>
+     <Text style={styles.titulo}>Lista de Tareas</Text>
       <AddProduct 
       setNewTitleProduct = {setNewTitleProduct}
       newTitleProduct = {newTitleProduct}
-      setNewPriceProduct = {setNewPriceProduct}
-      newPriceProduct = {newPriceProduct}
       handlerAddProduct = {handlerAddProduct}
       />
       
@@ -70,6 +69,12 @@ const styles = StyleSheet.create(
       height: 200,
       borderRadius: 10, // Ejemplo de aplicar un borde redondeado
     },
+    titulo:{
+      color:"green",
+      fontSize:30,
+      fontWeight:"700",
+      marginBottom:15
+    }
   }
 )
 export default App
