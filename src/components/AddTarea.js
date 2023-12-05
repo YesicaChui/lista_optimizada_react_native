@@ -1,4 +1,4 @@
-import { View,TextInput,Button,StyleSheet} from "react-native"
+import { View,TextInput,Button,StyleSheet,Pressable,Text} from "react-native"
 
 const AddTarea = ({setNewTitleTarea,newTitleTarea,handlerAddTarea}) => {
   return (
@@ -8,8 +8,10 @@ const AddTarea = ({setNewTitleTarea,newTitleTarea,handlerAddTarea}) => {
       onChangeText={(texto) => setNewTitleTarea(texto)} value={newTitleTarea} />
 
     
-    <Button title="Agregar" onPress={handlerAddTarea} ></Button>
-
+    {/* <Button title="Agregar" onPress={handlerAddTarea} ></Button> */}
+    <Pressable style={styles.botonInsertar} onPress={handlerAddTarea}>
+      <Text style={styles.textBotonInsertar}>Insertar</Text>
+    </Pressable>
   </View>
 
   )
@@ -27,6 +29,15 @@ const AddTarea = ({setNewTitleTarea,newTitleTarea,handlerAddTarea}) => {
     paddingVertical: 5,
     width: 150
   },
+  botonInsertar:{
+    backgroundColor:"green",
+    padding:15,
+    borderRadius:20
+  },
+  textBotonInsertar:{
+    color:"white",
+    fontWeight:"700"
+  }
 
  })
 export default AddTarea
