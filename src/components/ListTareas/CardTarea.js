@@ -1,11 +1,11 @@
 import { View,Text, Button,StyleSheet } from "react-native"
 
-const CardTarea = ({item,handlerDeleteModal}) => {
+const CardTarea = ({item,handlerDeleteModal,handlerCompletarTarea}) => {
   return (
     <View style={styles.cardTarea}>
             <Text style={item.completado?styles.cardTitleTachado:styles.cardTitle}>{item.title}</Text>
             <Button color={"#fff"} title="❌" onPress={() => handlerDeleteModal(item)} />
-            <Button color={"#fff"} title="✅" onPress={() => handlerDeleteModal(item)} />
+            <Button color={"#fff"} title="✅" onPress={() => handlerCompletarTarea(item)} />
           </View>
   )
 }

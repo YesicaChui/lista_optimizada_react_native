@@ -1,7 +1,7 @@
 import { View, FlatList, Text, Button, StyleSheet } from "react-native"
 import CardTarea from "./CardTarea"
 
-const ListTareas = ({ tareas, handlerDeleteModal }) => {
+const ListTareas = ({ tareas, handlerDeleteModal,handlerCompletarTarea }) => {
   return (
     <View style={styles.listContainer}>
       <FlatList
@@ -11,6 +11,7 @@ const ListTareas = ({ tareas, handlerDeleteModal }) => {
           <CardTarea
           handlerDeleteModal={handlerDeleteModal}
           item={item}
+          handlerCompletarTarea={handlerCompletarTarea}
           />
           }
       />

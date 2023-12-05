@@ -26,7 +26,16 @@ const App = () => {
     setIsVisible(false)
   }
   const handlerCompletarTarea = (elementoSeleccionado)=>{
+    const nuevoArregloTareas = [...tareas];
 
+    // Encontrar el índice del elemento usando findIndex
+    const indice = nuevoArregloTareas.findIndex((tarea) => tarea.id === elementoSeleccionado.id);
+
+    // Modificar el completado del elemento directamente si se encontró
+    if (indice !== -1) {
+      nuevoArregloTareas[indice].completado = true;
+      setTareas(nuevoArregloTareas);
+    }
   }
   const handlerAddTarea = () => {
     const newTarea = {
@@ -53,7 +62,8 @@ const App = () => {
         handlerDeleteTarea={handlerDeleteTarea}
         setIsVisible={setIsVisible}
       />
-      <ListTareas handlerDeleteModal={handlerDeleteModal} tareas={tareas} />
+      <ListTareas handlerDeleteModal={handlerDeleteModal} tareas={tareas} 
+      handlerCompletarTarea = {handlerCompletarTarea} />
     </View>
   )
 }
